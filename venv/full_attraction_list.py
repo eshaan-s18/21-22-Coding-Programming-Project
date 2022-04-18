@@ -24,9 +24,12 @@ def view_full_list():
     current_count = 1
 
     #gets the collection of Attractions from the database
-    docs = db.collection('Attractions').get()
+    docs = db.collection('Attractions')
+    query = docs.order_by("`Attraction Name`")
+    sortedDocs = query.get()
+
     #loops through each Attraction and prints out the attraction number through current_count and the Attraction Name
-    for doc in docs:
+    for doc in sortedDocs:
         print(str(current_count) + ". " + doc.to_dict().get("Attraction Name"))
         #current_count increases by 1 after each question and corresponding answer is printed to keep track of the number
         #of each question that is displayed from the database
