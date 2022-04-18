@@ -158,6 +158,7 @@ def interactive_Q_and_A():
         if question_asked == "cancel":
             ask_question("cancelled selection")
         else:
+            #sends the new question number and the question to the ask_question() method
             ask_question(total_count, question_asked)
 
     #if the user selects option 2, they will be able to answer xan existing question, and that answer will be added to
