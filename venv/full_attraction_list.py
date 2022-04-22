@@ -25,6 +25,7 @@ def view_full_list():
 
     #gets the collection of Attractions from the database
     docs = db.collection('Attractions')
+    #sorts the full list of Attractions in alphabetical order by Attraction Name
     query = docs.order_by("`Attraction Name`")
     sortedDocs = query.get()
 

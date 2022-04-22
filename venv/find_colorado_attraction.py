@@ -151,7 +151,7 @@ def filtered_attraction_information(selected_attraction, filtered_attraction_lis
     print("\n"+ filtered_attraction_list[selected_attraction - 1] + " Information:")
 
     #initializes geolocator variable from Google Maps API
-    geolocator = GoogleV3(api_key="AIzaSyA8w7a2eh - CPD7HfFOF8t - IlxOyif80kWE")
+    geolocator = GoogleV3(api_key="")
     #initializes the address variable which is geocoded using the name of the attraction
     address = geolocator.geocode(filtered_attraction_list[selected_attraction - 1])
 
@@ -159,7 +159,7 @@ def filtered_attraction_information(selected_attraction, filtered_attraction_lis
     print("Address: " + str(address))
 
     #connects to Google Places API using API Key
-    map_client = googlemaps.Client('AIzaSyA8w7a2eh-CPD7HfFOF8t-IlxOyif80kWE')
+    map_client = googlemaps.Client('')
 
     #initializes the location variable which is equal to the longitude and latitude of the attraction
     location = (address.latitude, address.longitude)

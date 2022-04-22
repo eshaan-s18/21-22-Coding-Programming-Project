@@ -95,10 +95,13 @@ def add_colorado_attraction():
 
     #initializes current_count variable which keeps track of the number of each attraction in the database that is displayed
     current_count = 1
-    #loops through each attractions and prints the attraction number and the attraction name
+
+    # gets the collection of Attractions from the database
     docs = db.collection('Attractions')
+    # sorts the full list of Attractions in alphabetical order by Attraction Name
     query = docs.order_by("`Attraction Name`")
     sortedDocs = query.get()
+    #loops through each attractions and prints the attraction number and the attraction name in alphabetical order
     for doc in sortedDocs:
         print(str(current_count) + ". " + doc.to_dict().get("Attraction Name"))
         #current_count increases by 1 after each attraction and corresponding answer is printed to keep track of the number
