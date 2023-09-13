@@ -159,6 +159,7 @@ def filtered_attraction_information(selected_attraction, filtered_attraction_lis
     print("Address: " + str(address))
 
     #connects to Google Places API using API Key
+    # REFERENCE NOTES FOR API KEY
     map_client = googlemaps.Client('')
 
     #initializes the location variable which is equal to the longitude and latitude of the attraction
